@@ -1,7 +1,12 @@
 ﻿using MetodWhatsAppDesktop.Models;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MetodWhatsAppDesktop
@@ -12,6 +17,9 @@ namespace MetodWhatsAppDesktop
         {
             InitializeComponent();
         }
+
+        ChromeOptions options;
+        WebDriver driver;
 
         private void btnGetProducts_Click(object sender, EventArgs e)
         {
@@ -107,13 +115,41 @@ namespace MetodWhatsAppDesktop
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
+
             var gridDb = bsPhone.List as IList<PhoneBookModel>;
             foreach (var item in Services.PhoneDataService.PhoneData.OrderBy(a => a.Name))
                 gridDb.Add(item);
 
         }
 
-        private void btnSendProducts_Click(object sender, EventArgs e)
+        bool WhatsAppConnected = false;
+
+        void ConnectWhatsApp()
+        {
+            Thread thread = new Thread(new ThreadStart(startDriver));
+            thread.Start();
+            void startDriver()
+            {
+                ChromeDriverService servis = ChromeDriverService.CreateDefaultService();
+                servis.HideCommandPromptWindow = true;
+
+                options = new ChromeOptions();
+                options.AddArguments("start-maximized");
+                options.AddArguments("incognito");
+                options.AddExcludedArgument("enable-automation");
+
+                driver = new ChromeDriver(servis, options);
+                driver.Navigate().GoToUrl("https://web.whatsapp.com/");
+                Thread.Sleep(1000);
+
+                btnSendProducts.Text = "Seçili Ürünleri Gönder";
+
+                WhatsAppConnected = true;
+            }
+        }
+
+        void SendMessages()
         {
             var gridProductList = bsProduct.List as IList<ProductModel>;
 
@@ -121,8 +157,8 @@ namespace MetodWhatsAppDesktop
 
             for (int i = 0; i < this.gridProducts.RowCount; i++)
             {
-                var seciliMi = this.gridProducts.Rows[i].Cells["colSelect"].Value == null 
-                    ? false 
+                var seciliMi = this.gridProducts.Rows[i].Cells["colSelect"].Value == null
+                    ? false
                     : Convert.ToBoolean(this.gridProducts.Rows[i].Cells["colSelect"].Value);
 
                 if (seciliMi)
@@ -158,19 +194,57 @@ namespace MetodWhatsAppDesktop
 
             var messages = Services.WhatsAppService.GenerateMessages(products);
 
+            bool ilkDosyaGonderildi = false;
+
             foreach (var phone in phones)
             {
-                //phone.Gsm;
-
-                foreach (var message in messages)
+                try
                 {
-                    if (message.MessageType == Enums.WhatsApp.MessageType.Text)
-                        ;//text message
+                    driver.Navigate().GoToUrl($"https://web.whatsapp.com/send?phone=+90{phone.Gsm}");
+                    Thread.Sleep(5000);
 
-                    if (message.MessageType == Enums.WhatsApp.MessageType.Image)
-                        ;//image message
+                    foreach (var message in messages.OrderBy(a => a.Index).ToList())
+                    {
+                        if (message.MessageType == Enums.WhatsApp.MessageType.Text)
+                        {
+                            var messageArea = driver.FindElement(By.ClassName("_3Uu1_"));
+                            messageArea.Click();
+                            messageArea.SendKeys(message.Content);
+                            driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
+                            Thread.Sleep(3000);
+                        }
+                        else if (message.MessageType == Enums.WhatsApp.MessageType.Image)
+                        {
+                            Thread.Sleep(3000);
+                            driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
+                            Thread.Sleep(3000);
+                            driver.FindElement(By.CssSelector("._3fV_S")).Click();
+                            Thread.Sleep(2000);
+                            SendKeys.Send(ilkDosyaGonderildi ? Path.GetFileName(message.Content) : message.Content);
+                            Thread.Sleep(2000);
+                            SendKeys.Send("{ENTER}");
+                            Thread.Sleep(3000);
+                            SendKeys.Send("{ENTER}");
+
+                            ilkDosyaGonderildi = true;
+                        }
+                    }
+
+                    Thread.Sleep(5000);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
                 }
             }
+        }
+
+        private void btnSendProducts_Click(object sender, EventArgs e)
+        {
+            if (WhatsAppConnected)
+                SendMessages();
+            else
+                ConnectWhatsApp();
         }
     }
 }

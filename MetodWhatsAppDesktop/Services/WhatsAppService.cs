@@ -30,6 +30,8 @@ namespace MetodWhatsAppDesktop.Services
 
             var modelGroups = products.GroupBy(a => a.Model).OrderBy(a => a.Key).ToList();
 
+            int index = 0;
+
             foreach (var model in modelGroups)
             {
                 var bedenGroup = products.Where(a => a.Model == model.Key).GroupBy(a => a.Beden).OrderBy(a => a.Key).ToList();
@@ -37,7 +39,7 @@ namespace MetodWhatsAppDesktop.Services
                 foreach (var beden in bedenGroup)
                 {
                     //Model (Beden)
-                    result.Add(new WhatsAppMessageModel { MessageType = Enums.WhatsApp.MessageType.Text, Content = $"{model.Key} ({beden.Key})" });
+                    result.Add(new WhatsAppMessageModel { Index = index++, MessageType = Enums.WhatsApp.MessageType.Text, Content = $"{model.Key} ({beden.Key})" });
 
                     var resimler = products.Where(a => a.Model == model.Key && a.Beden == beden.Key).OrderBy(a => a.Renk).ToList();
 
@@ -47,7 +49,7 @@ namespace MetodWhatsAppDesktop.Services
                         if (imagePath == "")
                             continue;
 
-                        result.Add(new WhatsAppMessageModel { MessageType = Enums.WhatsApp.MessageType.Image, Content = $"{imagePath}" });
+                        result.Add(new WhatsAppMessageModel { Index = index++, MessageType = Enums.WhatsApp.MessageType.Image, Content = $"{imagePath}" });
                     }
                 }
             }

@@ -36,10 +36,19 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gridProducts = new System.Windows.Forms.DataGridView();
             this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.renkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Beden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bakiyeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resimDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.bsProduct = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gridPhones = new System.Windows.Forms.DataGridView();
+            this.colPhoneSec = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gsmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPhone = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
@@ -50,27 +59,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.renkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bakiyeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resimDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.bsProduct = new System.Windows.Forms.BindingSource(this.components);
-            this.bsPhone = new System.Windows.Forms.BindingSource(this.components);
-            this.colPhoneSec = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gsmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPhones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -99,8 +99,8 @@
             this.btnSendProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnSendProducts.Image")));
             this.btnSendProducts.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSendProducts.Name = "btnSendProducts";
-            this.btnSendProducts.Size = new System.Drawing.Size(141, 22);
-            this.btnSendProducts.Text = "Seçili Ürünleri Gönder";
+            this.btnSendProducts.Size = new System.Drawing.Size(130, 22);
+            this.btnSendProducts.Text = "WhatsApp a Bağlan";
             this.btnSendProducts.Click += new System.EventHandler(this.btnSendProducts_Click);
             // 
             // splitContainer1
@@ -158,12 +158,49 @@
             this.colSelect.Name = "colSelect";
             this.colSelect.Width = 50;
             // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // renkDataGridViewTextBoxColumn
+            // 
+            this.renkDataGridViewTextBoxColumn.DataPropertyName = "Renk";
+            this.renkDataGridViewTextBoxColumn.HeaderText = "Renk";
+            this.renkDataGridViewTextBoxColumn.Name = "renkDataGridViewTextBoxColumn";
+            this.renkDataGridViewTextBoxColumn.ReadOnly = true;
+            this.renkDataGridViewTextBoxColumn.Width = 200;
+            // 
             // Beden
             // 
             this.Beden.DataPropertyName = "Beden";
             this.Beden.HeaderText = "Beden";
             this.Beden.Name = "Beden";
             this.Beden.ReadOnly = true;
+            // 
+            // bakiyeDataGridViewTextBoxColumn
+            // 
+            this.bakiyeDataGridViewTextBoxColumn.DataPropertyName = "Bakiye";
+            this.bakiyeDataGridViewTextBoxColumn.HeaderText = "Bakiye";
+            this.bakiyeDataGridViewTextBoxColumn.Name = "bakiyeDataGridViewTextBoxColumn";
+            this.bakiyeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bakiyeDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // resimDataGridViewImageColumn
+            // 
+            this.resimDataGridViewImageColumn.DataPropertyName = "Resim";
+            this.resimDataGridViewImageColumn.HeaderText = "Resim";
+            this.resimDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.resimDataGridViewImageColumn.Name = "resimDataGridViewImageColumn";
+            this.resimDataGridViewImageColumn.ReadOnly = true;
+            this.resimDataGridViewImageColumn.Width = 200;
+            // 
+            // bsProduct
+            // 
+            this.bsProduct.DataSource = typeof(MetodWhatsAppDesktop.Models.ProductModel);
             // 
             // panel1
             // 
@@ -205,6 +242,31 @@
             this.gridPhones.Size = new System.Drawing.Size(358, 382);
             this.gridPhones.TabIndex = 2;
             this.gridPhones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhones_CellDoubleClick);
+            // 
+            // colPhoneSec
+            // 
+            this.colPhoneSec.HeaderText = "Sec";
+            this.colPhoneSec.Name = "colPhoneSec";
+            this.colPhoneSec.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "İsim / Ünvan";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gsmDataGridViewTextBoxColumn
+            // 
+            this.gsmDataGridViewTextBoxColumn.DataPropertyName = "Gsm";
+            this.gsmDataGridViewTextBoxColumn.HeaderText = "Gsm";
+            this.gsmDataGridViewTextBoxColumn.Name = "gsmDataGridViewTextBoxColumn";
+            this.gsmDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsPhone
+            // 
+            this.bsPhone.DataSource = typeof(MetodWhatsAppDesktop.Models.PhoneBookModel);
             // 
             // panel3
             // 
@@ -311,68 +373,6 @@
             this.label2.Text = "Rehber";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // renkDataGridViewTextBoxColumn
-            // 
-            this.renkDataGridViewTextBoxColumn.DataPropertyName = "Renk";
-            this.renkDataGridViewTextBoxColumn.HeaderText = "Renk";
-            this.renkDataGridViewTextBoxColumn.Name = "renkDataGridViewTextBoxColumn";
-            this.renkDataGridViewTextBoxColumn.ReadOnly = true;
-            this.renkDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // bakiyeDataGridViewTextBoxColumn
-            // 
-            this.bakiyeDataGridViewTextBoxColumn.DataPropertyName = "Bakiye";
-            this.bakiyeDataGridViewTextBoxColumn.HeaderText = "Bakiye";
-            this.bakiyeDataGridViewTextBoxColumn.Name = "bakiyeDataGridViewTextBoxColumn";
-            this.bakiyeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bakiyeDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // resimDataGridViewImageColumn
-            // 
-            this.resimDataGridViewImageColumn.DataPropertyName = "Resim";
-            this.resimDataGridViewImageColumn.HeaderText = "Resim";
-            this.resimDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.resimDataGridViewImageColumn.Name = "resimDataGridViewImageColumn";
-            this.resimDataGridViewImageColumn.ReadOnly = true;
-            this.resimDataGridViewImageColumn.Width = 200;
-            // 
-            // bsProduct
-            // 
-            this.bsProduct.DataSource = typeof(MetodWhatsAppDesktop.Models.ProductModel);
-            // 
-            // bsPhone
-            // 
-            this.bsPhone.DataSource = typeof(MetodWhatsAppDesktop.Models.PhoneBookModel);
-            // 
-            // colPhoneSec
-            // 
-            this.colPhoneSec.HeaderText = "Sec";
-            this.colPhoneSec.Name = "colPhoneSec";
-            this.colPhoneSec.Width = 50;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "İsim / Ünvan";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gsmDataGridViewTextBoxColumn
-            // 
-            this.gsmDataGridViewTextBoxColumn.DataPropertyName = "Gsm";
-            this.gsmDataGridViewTextBoxColumn.HeaderText = "Gsm";
-            this.gsmDataGridViewTextBoxColumn.Name = "gsmDataGridViewTextBoxColumn";
-            this.gsmDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -392,13 +392,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridPhones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
