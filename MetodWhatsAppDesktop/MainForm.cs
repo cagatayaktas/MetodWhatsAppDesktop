@@ -348,5 +348,19 @@ namespace MetodWhatsAppDesktop
                 btnNew1_Click(null, null);
             }
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(WhatsAppConnected && driver != null)
+                try
+                {   
+                    driver.Close();
+                    driver.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    var msg = ex.ToString();                    
+                }
+        }
     }
 }
