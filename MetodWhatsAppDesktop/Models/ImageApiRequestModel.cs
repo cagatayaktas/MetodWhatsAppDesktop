@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MetodWhatsAppDesktop.Models
 {
-    public class ApiResultModel <T>
+    public class ImageApiRequestModel
     {
-        public bool IsSuccess { get; set; }
-        public T Data { get; set; } 
+        public List<int> StokIds { get; set; }
     }
 }

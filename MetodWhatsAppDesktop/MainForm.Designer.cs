@@ -30,411 +30,512 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnGetProducts = new System.Windows.Forms.ToolStripButton();
-            this.btnSendProducts = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.gridProducts = new System.Windows.Forms.DataGridView();
-            this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.renkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Beden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bakiyeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resimDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bsProduct = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gridPhones = new System.Windows.Forms.DataGridView();
-            this.colPhoneSec = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gsmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colStokId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRenk = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBeden = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBakiye2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.bsPhone = new System.Windows.Forms.BindingSource(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.tbGsm = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGsm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.barGetProducts = new DevExpress.XtraBars.BarButtonItem();
+            this.barWhatsApp = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnNew1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.tbGsm = new DevExpress.XtraEditors.TextEdit();
+            this.tbName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPhones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGsm.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbName.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnGetProducts,
-            this.btnSendProducts});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1101, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnGetProducts
-            // 
-            this.btnGetProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnGetProducts.Image")));
-            this.btnGetProducts.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGetProducts.Name = "btnGetProducts";
-            this.btnGetProducts.Size = new System.Drawing.Size(156, 22);
-            this.btnGetProducts.Text = "Güncel Ürün Listesi Getir";
-            this.btnGetProducts.Click += new System.EventHandler(this.btnGetProducts_Click);
-            // 
-            // btnSendProducts
-            // 
-            this.btnSendProducts.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnSendProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnSendProducts.Image")));
-            this.btnSendProducts.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSendProducts.Name = "btnSendProducts";
-            this.btnSendProducts.Size = new System.Drawing.Size(130, 22);
-            this.btnSendProducts.Text = "WhatsApp a Bağlan";
-            this.btnSendProducts.Click += new System.EventHandler(this.btnSendProducts_Click);
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 47);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.gridProducts);
-            this.splitContainer1.Panel1.Controls.Add(this.panel1);
+            this.splitContainer1.Panel1.Controls.Add(this.gridControl1);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl1);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.gridPhones);
-            this.splitContainer1.Panel2.Controls.Add(this.panel3);
-            this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1101, 513);
-            this.splitContainer1.SplitterDistance = 738;
+            this.splitContainer1.Panel2.Controls.Add(this.gridControl2);
+            this.splitContainer1.Panel2.Controls.Add(this.panelControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.labelControl2);
+            this.splitContainer1.Size = new System.Drawing.Size(847, 493);
+            this.splitContainer1.SplitterDistance = 550;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
-            // gridProducts
+            // gridControl1
             // 
-            this.gridProducts.AllowUserToAddRows = false;
-            this.gridProducts.AllowUserToDeleteRows = false;
-            this.gridProducts.AllowUserToOrderColumns = true;
-            this.gridProducts.AutoGenerateColumns = false;
-            this.gridProducts.BackgroundColor = System.Drawing.Color.White;
-            this.gridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSelect,
-            this.modelDataGridViewTextBoxColumn,
-            this.renkDataGridViewTextBoxColumn,
-            this.Beden,
-            this.bakiyeDataGridViewTextBoxColumn,
-            this.resimDataGridViewImageColumn});
-            this.gridProducts.DataSource = this.bsProduct;
-            this.gridProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridProducts.Location = new System.Drawing.Point(0, 33);
-            this.gridProducts.Name = "gridProducts";
-            this.gridProducts.RowHeadersVisible = false;
-            this.gridProducts.RowTemplate.Height = 200;
-            this.gridProducts.ShowCellErrors = false;
-            this.gridProducts.ShowCellToolTips = false;
-            this.gridProducts.ShowEditingIcon = false;
-            this.gridProducts.ShowRowErrors = false;
-            this.gridProducts.Size = new System.Drawing.Size(738, 480);
-            this.gridProducts.TabIndex = 1;
-            // 
-            // colSelect
-            // 
-            this.colSelect.HeaderText = "Sec";
-            this.colSelect.Name = "colSelect";
-            this.colSelect.Width = 50;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // renkDataGridViewTextBoxColumn
-            // 
-            this.renkDataGridViewTextBoxColumn.DataPropertyName = "Renk";
-            this.renkDataGridViewTextBoxColumn.HeaderText = "Renk";
-            this.renkDataGridViewTextBoxColumn.Name = "renkDataGridViewTextBoxColumn";
-            this.renkDataGridViewTextBoxColumn.ReadOnly = true;
-            this.renkDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // Beden
-            // 
-            this.Beden.DataPropertyName = "Beden";
-            this.Beden.HeaderText = "Beden";
-            this.Beden.Name = "Beden";
-            this.Beden.ReadOnly = true;
-            // 
-            // bakiyeDataGridViewTextBoxColumn
-            // 
-            this.bakiyeDataGridViewTextBoxColumn.DataPropertyName = "Bakiye";
-            this.bakiyeDataGridViewTextBoxColumn.HeaderText = "Bakiye";
-            this.bakiyeDataGridViewTextBoxColumn.Name = "bakiyeDataGridViewTextBoxColumn";
-            this.bakiyeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bakiyeDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // resimDataGridViewImageColumn
-            // 
-            this.resimDataGridViewImageColumn.DataPropertyName = "Resim";
-            this.resimDataGridViewImageColumn.HeaderText = "Resim";
-            this.resimDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.resimDataGridViewImageColumn.Name = "resimDataGridViewImageColumn";
-            this.resimDataGridViewImageColumn.ReadOnly = true;
-            this.resimDataGridViewImageColumn.Width = 200;
+            this.gridControl1.DataSource = this.bsProduct;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 30);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(550, 463);
+            this.gridControl1.TabIndex = 1;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
             // bsProduct
             // 
             this.bsProduct.DataSource = typeof(MetodWhatsAppDesktop.Models.ProductModel);
             // 
-            // panel1
+            // gridView1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 33);
-            this.panel1.TabIndex = 0;
+            this.gridView1.ColumnPanelRowHeight = 30;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colStokId,
+            this.colModel,
+            this.colRenk,
+            this.colBeden,
+            this.colBakiye,
+            this.colBakiye2});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.RowHeight = 25;
             // 
-            // label1
+            // colStokId
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(736, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ürün Listesi";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.colStokId.FieldName = "StokId";
+            this.colStokId.Name = "colStokId";
+            this.colStokId.OptionsColumn.AllowEdit = false;
+            this.colStokId.OptionsColumn.AllowFocus = false;
             // 
-            // gridPhones
+            // colModel
             // 
-            this.gridPhones.AllowUserToAddRows = false;
-            this.gridPhones.AllowUserToDeleteRows = false;
-            this.gridPhones.AutoGenerateColumns = false;
-            this.gridPhones.BackgroundColor = System.Drawing.Color.White;
-            this.gridPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPhones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colPhoneSec,
-            this.nameDataGridViewTextBoxColumn,
-            this.gsmDataGridViewTextBoxColumn});
-            this.gridPhones.DataSource = this.bsPhone;
-            this.gridPhones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridPhones.Location = new System.Drawing.Point(0, 33);
-            this.gridPhones.Name = "gridPhones";
-            this.gridPhones.RowHeadersVisible = false;
-            this.gridPhones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridPhones.Size = new System.Drawing.Size(358, 382);
-            this.gridPhones.TabIndex = 2;
-            this.gridPhones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhones_CellDoubleClick);
+            this.colModel.FieldName = "Model";
+            this.colModel.Name = "colModel";
+            this.colModel.OptionsColumn.AllowEdit = false;
+            this.colModel.OptionsColumn.AllowFocus = false;
+            this.colModel.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Model", "{0}")});
+            this.colModel.Visible = true;
+            this.colModel.VisibleIndex = 1;
+            this.colModel.Width = 88;
             // 
-            // colPhoneSec
+            // colRenk
             // 
-            this.colPhoneSec.HeaderText = "Sec";
-            this.colPhoneSec.Name = "colPhoneSec";
-            this.colPhoneSec.Width = 50;
+            this.colRenk.FieldName = "Renk";
+            this.colRenk.Name = "colRenk";
+            this.colRenk.OptionsColumn.AllowEdit = false;
+            this.colRenk.OptionsColumn.AllowFocus = false;
+            this.colRenk.Visible = true;
+            this.colRenk.VisibleIndex = 3;
+            this.colRenk.Width = 210;
             // 
-            // nameDataGridViewTextBoxColumn
+            // colBeden
             // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "İsim / Ünvan";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colBeden.FieldName = "Beden";
+            this.colBeden.Name = "colBeden";
+            this.colBeden.OptionsColumn.AllowEdit = false;
+            this.colBeden.OptionsColumn.AllowFocus = false;
+            this.colBeden.Visible = true;
+            this.colBeden.VisibleIndex = 2;
+            this.colBeden.Width = 108;
             // 
-            // gsmDataGridViewTextBoxColumn
+            // colBakiye
             // 
-            this.gsmDataGridViewTextBoxColumn.DataPropertyName = "Gsm";
-            this.gsmDataGridViewTextBoxColumn.HeaderText = "Gsm";
-            this.gsmDataGridViewTextBoxColumn.Name = "gsmDataGridViewTextBoxColumn";
-            this.gsmDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colBakiye.Caption = "Bakiye (Çift)";
+            this.colBakiye.DisplayFormat.FormatString = "n0";
+            this.colBakiye.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colBakiye.FieldName = "Bakiye";
+            this.colBakiye.Name = "colBakiye";
+            this.colBakiye.OptionsColumn.AllowEdit = false;
+            this.colBakiye.OptionsColumn.AllowFocus = false;
+            this.colBakiye.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Bakiye", "{0:n0}")});
+            // 
+            // colBakiye2
+            // 
+            this.colBakiye2.Caption = "Bakiye (Koli)";
+            this.colBakiye2.DisplayFormat.FormatString = "n0";
+            this.colBakiye2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colBakiye2.FieldName = "Bakiye2";
+            this.colBakiye2.Name = "colBakiye2";
+            this.colBakiye2.OptionsColumn.AllowEdit = false;
+            this.colBakiye2.OptionsColumn.AllowFocus = false;
+            this.colBakiye2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Bakiye2", "{0:n0}")});
+            this.colBakiye2.Visible = true;
+            this.colBakiye2.VisibleIndex = 4;
+            this.colBakiye2.Width = 85;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl1.Location = new System.Drawing.Point(0, 0);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(550, 30);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Hazır Ürün Listesi";
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataSource = this.bsPhone;
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 30);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.MenuManager = this.barManager1;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(292, 366);
+            this.gridControl2.TabIndex = 1;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
             // 
             // bsPhone
             // 
             this.bsPhone.DataSource = typeof(MetodWhatsAppDesktop.Models.PhoneBookModel);
             // 
-            // panel3
+            // gridView2
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btnDelete);
-            this.panel3.Controls.Add(this.btnNew);
-            this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Controls.Add(this.tbGsm);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.tbName);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 415);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(358, 98);
-            this.panel3.TabIndex = 1;
+            this.gridView2.ColumnPanelRowHeight = 30;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colName,
+            this.colGsm});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
+            this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView2.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.OptionsView.ShowIndicator = false;
+            this.gridView2.RowHeight = 25;
+            this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
-            // btnDelete
+            // colName
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(289, 67);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(56, 23);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Sil";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.colName.Caption = "İsim / Ünvan";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.OptionsColumn.AllowEdit = false;
+            this.colName.OptionsColumn.AllowFocus = false;
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 140;
             // 
-            // btnNew
+            // colGsm
             // 
-            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNew.Location = new System.Drawing.Point(140, 67);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(56, 23);
-            this.btnNew.TabIndex = 2;
-            this.btnNew.Text = "Yeni";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.colGsm.Caption = "Gsm No";
+            this.colGsm.FieldName = "Gsm";
+            this.colGsm.Name = "colGsm";
+            this.colGsm.OptionsColumn.AllowEdit = false;
+            this.colGsm.OptionsColumn.AllowFocus = false;
+            this.colGsm.OptionsColumn.FixedWidth = true;
+            this.colGsm.Visible = true;
+            this.colGsm.VisibleIndex = 2;
+            this.colGsm.Width = 80;
             // 
-            // btnSave
+            // barManager1
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(202, 67);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 23);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barGetProducts,
+            this.barWhatsApp});
+            this.barManager1.MaxItemId = 2;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barGetProducts, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barWhatsApp, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.OptionsBar.AllowQuickCustomization = false;
+            this.bar1.OptionsBar.DrawDragBorder = false;
+            this.bar1.OptionsBar.RotateWhenVertical = false;
+            this.bar1.OptionsBar.UseWholeRow = true;
+            this.bar1.Text = "Tools";
+            // 
+            // barGetProducts
+            // 
+            this.barGetProducts.Caption = "Güncel Hazır Ürün Listesi Getir";
+            this.barGetProducts.Id = 0;
+            this.barGetProducts.ImageOptions.Image = global::MetodWhatsAppDesktop.Properties.Resources.cloud_32;
+            this.barGetProducts.Name = "barGetProducts";
+            this.barGetProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barGetProducts_ItemClick);
+            // 
+            // barWhatsApp
+            // 
+            this.barWhatsApp.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barWhatsApp.Caption = "Whatsapp\'a Bağlan";
+            this.barWhatsApp.Id = 1;
+            this.barWhatsApp.ImageOptions.Image = global::MetodWhatsAppDesktop.Properties.Resources.whatsapp_32;
+            this.barWhatsApp.Name = "barWhatsApp";
+            this.barWhatsApp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barWhatsApp_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(847, 47);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(847, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 493);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(847, 47);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 493);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.btnNew1);
+            this.panelControl1.Controls.Add(this.btnSave1);
+            this.panelControl1.Controls.Add(this.btnDelete1);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.tbGsm);
+            this.panelControl1.Controls.Add(this.tbName);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 396);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(292, 97);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // btnNew1
+            // 
+            this.btnNew1.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnNew1.Appearance.Options.UseFont = true;
+            this.btnNew1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnNew1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew1.ImageOptions.Image")));
+            this.btnNew1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnNew1.Location = new System.Drawing.Point(174, 60);
+            this.btnNew1.Name = "btnNew1";
+            this.btnNew1.Size = new System.Drawing.Size(30, 27);
+            this.btnNew1.TabIndex = 2;
+            this.btnNew1.Click += new System.EventHandler(this.btnNew1_Click);
+            // 
+            // btnSave1
+            // 
+            this.btnSave1.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave1.Appearance.Options.UseFont = true;
+            this.btnSave1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnSave1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave1.ImageOptions.Image")));
+            this.btnSave1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnSave1.Location = new System.Drawing.Point(212, 60);
+            this.btnSave1.Name = "btnSave1";
+            this.btnSave1.Size = new System.Drawing.Size(30, 27);
+            this.btnSave1.TabIndex = 3;
+            this.btnSave1.Click += new System.EventHandler(this.btnSave1_Click);
+            // 
+            // btnDelete1
+            // 
+            this.btnDelete1.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete1.Appearance.Options.UseFont = true;
+            this.btnDelete1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnDelete1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete1.ImageOptions.Image")));
+            this.btnDelete1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnDelete1.Location = new System.Drawing.Point(250, 60);
+            this.btnDelete1.Name = "btnDelete1";
+            this.btnDelete1.Size = new System.Drawing.Size(30, 27);
+            this.btnDelete1.TabIndex = 2;
+            this.btnDelete1.Click += new System.EventHandler(this.btnDelete1_Click);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(6, 31);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(24, 15);
+            this.labelControl4.TabIndex = 1;
+            this.labelControl4.Text = "Gsm";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(6, 11);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(70, 15);
+            this.labelControl3.TabIndex = 1;
+            this.labelControl3.Text = "İsim / Ünvan";
             // 
             // tbGsm
             // 
-            this.tbGsm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbGsm.Location = new System.Drawing.Point(100, 37);
+            this.tbGsm.Location = new System.Drawing.Point(94, 33);
             this.tbGsm.Name = "tbGsm";
-            this.tbGsm.Size = new System.Drawing.Size(245, 23);
+            this.tbGsm.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tbGsm.Properties.Appearance.Options.UseFont = true;
+            this.tbGsm.Properties.Mask.EditMask = "\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d";
+            this.tbGsm.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.tbGsm.Properties.MaxLength = 10;
+            this.tbGsm.Size = new System.Drawing.Size(186, 22);
             this.tbGsm.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Gsm";
             // 
             // tbName
             // 
-            this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbName.Location = new System.Drawing.Point(100, 8);
+            this.tbName.Location = new System.Drawing.Point(94, 6);
+            this.tbName.MenuManager = this.barManager1;
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(245, 23);
+            this.tbName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tbName.Properties.Appearance.Options.UseFont = true;
+            this.tbName.Size = new System.Drawing.Size(186, 22);
             this.tbName.TabIndex = 0;
             // 
-            // label3
+            // labelControl2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "İsim / Ünvan";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(358, 33);
-            this.panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(356, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Rehber";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl2.Location = new System.Drawing.Point(0, 0);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(292, 30);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "Rehber";
             // 
             // MainForm
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 538);
+            this.ClientSize = new System.Drawing.Size(847, 540);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LookAndFeel.SkinName = "The Bezier";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metod Ürün Paylaş";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduct)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridPhones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGsm.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbName.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnGetProducts;
-        private System.Windows.Forms.ToolStripButton btnSendProducts;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView gridProducts;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource bsProduct;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colSelect;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn renkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Beden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bakiyeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn resimDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridView gridPhones;
         private System.Windows.Forms.BindingSource bsPhone;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox tbGsm;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colPhoneSec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gsmDataGridViewTextBoxColumn;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colStokId;
+        private DevExpress.XtraGrid.Columns.GridColumn colModel;
+        private DevExpress.XtraGrid.Columns.GridColumn colRenk;
+        private DevExpress.XtraGrid.Columns.GridColumn colBeden;
+        private DevExpress.XtraGrid.Columns.GridColumn colBakiye;
+        private DevExpress.XtraGrid.Columns.GridColumn colBakiye2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem barGetProducts;
+        private DevExpress.XtraBars.BarButtonItem barWhatsApp;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colGsm;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnDelete1;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit tbGsm;
+        private DevExpress.XtraEditors.TextEdit tbName;
+        private DevExpress.XtraEditors.SimpleButton btnSave1;
+        private DevExpress.XtraEditors.SimpleButton btnNew1;
     }
 }
 
