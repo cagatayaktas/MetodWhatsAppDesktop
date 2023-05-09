@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -21,6 +22,22 @@ namespace MetodWhatsAppDesktop
 
         ChromeOptions options;
         WebDriver driver;
+
+        [DllImport("user32.dll")]
+        static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
+
+        void CapsLockOff()
+        {
+            if (Control.IsKeyLocked(System.Windows.Forms.Keys.CapsLock))
+            {
+                const int KEYEVENTF_EXTENDEDKEY = 0x1;
+                const int KEYEVENTF_KEYUP = 0x2;
+                keybd_event(0x14, 0x45, KEYEVENTF_EXTENDEDKEY, (UIntPtr)0);
+                keybd_event(0x14, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP,
+                (UIntPtr)0);
+                Thread.Sleep(1000);
+            }
+        }
 
         private void btnGetProducts_Click(object sender, EventArgs e)
         {
@@ -115,9 +132,11 @@ namespace MetodWhatsAppDesktop
                     return;
                 }
 
+                CapsLockOff();
+
                 var messages = Services.WhatsAppService.GenerateMessages(products);
 
-                //bool ilkDosyaGonderildi = false;
+                bool ilkDosyaGonderildi = false;
 
                 var specOrder = new List<string> { "F", "P", "B" };
 
@@ -134,40 +153,39 @@ namespace MetodWhatsAppDesktop
                             //.ThenBy(a => a.Key.Beden)
                             .ToList();
 
+
                         foreach (var grup in gruplar)
                         {
-                            Thread.Sleep(5000);
-
-                            //başlığı gönder
-                            var messageArea = driver.FindElement(By.ClassName("_3Uu1_"));
-                            messageArea.Click();
-                            messageArea.SendKeys($"{grup.Key.Model} ({grup.Key.Beden})");
-                            driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
-
-                            Thread.Sleep(5000);
-
+                            bool ilkResimMi = false;
 
                             //resimleri gönder
                             var resimler = messages.Where(a => a.Model == grup.Key.Model && a.Beden == grup.Key.Beden).ToList();
 
-                            //ilk resmi gönder
-                            driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
-                            Thread.Sleep(3000);
-                            driver.FindElement(By.CssSelector("._3fV_S")).Click();
-                            Thread.Sleep(2000);
-                            SendKeys.Send(resimler[0].Content);
-                            Thread.Sleep(2000);
-                            SendKeys.Send("{ENTER}");
-                            Thread.Sleep(3000);
-                            SendKeys.Send("{ENTER}");
+                            if (ilkDosyaGonderildi == false)
+                            {
+                                //ilk resmi gönder
+                                driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
+                                Thread.Sleep(1000);
+                                driver.FindElement(By.CssSelector("._3fV_S")).Click();
+                                Thread.Sleep(1000);
+                                SendKeys.Send(resimler[0].Content);
+                                Thread.Sleep(1000);
+                                SendKeys.Send("{ENTER}");
+                                Thread.Sleep(1500);
+                                SendKeys.Send("{ENTER}");
 
-                            Thread.Sleep(5000);
+                                Thread.Sleep(2000);
+
+                                ilkDosyaGonderildi = true;
+                                ilkResimMi = true;
+
+                            }
+
 
                             string resimAdList = "";
                             foreach (var resim in resimler)
                             {
-                                if (resim.Content == resimler[0].Content)
-                                    continue;
+                                if (ilkResimMi) continue;
 
                                 if (resimAdList.Length > 0)
                                     resimAdList += " ";
@@ -178,21 +196,28 @@ namespace MetodWhatsAppDesktop
                             if (resimAdList.Length > 0)
                             {
                                 driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
-                                Thread.Sleep(3000);
+                                Thread.Sleep(1000);
                                 driver.FindElement(By.CssSelector("._3fV_S")).Click();
-                                Thread.Sleep(2000);
+                                Thread.Sleep(1000);
                                 SendKeys.Send(resimAdList);
-                                Thread.Sleep(2000);
+                                Thread.Sleep(1000);
                                 SendKeys.Send("{ENTER}");
-                                Thread.Sleep(3000);
+                                Thread.Sleep(1500);
                                 SendKeys.Send("{ENTER}");
 
-                                Thread.Sleep(5000);
+                                Thread.Sleep(2000);
                             }
+
+
+                            //başlığı gönder
+                            var messageArea = driver.FindElement(By.ClassName("_3Uu1_"));
+                            messageArea.Click();
+                            messageArea.SendKeys($"({grup.Key.Beden})");
+                            driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
+
+                            Thread.Sleep(1500);
                         }
 
-                        Thread.Sleep(5000);
-                        
                     }
                     catch (Exception ex)
                     {
