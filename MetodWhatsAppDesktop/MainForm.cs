@@ -24,7 +24,7 @@ namespace MetodWhatsAppDesktop
 
         private void btnGetProducts_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -107,7 +107,7 @@ namespace MetodWhatsAppDesktop
                 foreach (var item in gridView2.GetSelectedRows())
                 {
                     phones.Add((PhoneBookModel)gridView2.GetRow(item));
-                }                
+                }
 
                 if (phones.Count == 0)
                 {
@@ -118,7 +118,9 @@ namespace MetodWhatsAppDesktop
                 var messages = Services.WhatsAppService.GenerateMessages(products);
 
                 //bool ilkDosyaGonderildi = false;
-                
+
+                var specOrder = new List<string> { "F", "P", "B" };
+
                 foreach (var phone in phones)
                 {
                     try
@@ -127,7 +129,10 @@ namespace MetodWhatsAppDesktop
 
                         Thread.Sleep(5000);
 
-                        var gruplar = messages.GroupBy(a => new { a.Model, a.Beden }).OrderBy(a => a.Key.Model).ThenBy(a => a.Key.Beden).ToList();
+                        var gruplar = messages.GroupBy(a => new { a.Model, a.Beden }).OrderBy(a => a.Key.Model)
+                            .ThenBy(a => specOrder.IndexOf(a.Key.Beden.Substring(0, 1)))
+                            //.ThenBy(a => a.Key.Beden)
+                            .ToList();
 
                         foreach (var grup in gruplar)
                         {
@@ -187,37 +192,7 @@ namespace MetodWhatsAppDesktop
                         }
 
                         Thread.Sleep(5000);
-
-                        //Thread.Sleep(5000);
-
-                        //foreach (var message in messages.OrderBy(a => a.Index).ToList())
-                        //{
-                        //    if (message.MessageType == Enums.WhatsApp.MessageType.Text)
-                        //    {
-                        //        var messageArea = driver.FindElement(By.ClassName("_3Uu1_"));
-                        //        messageArea.Click();
-                        //        messageArea.SendKeys(message.Content);
-                        //        driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
-                        //        Thread.Sleep(3000);
-                        //    }
-                        //    else if (message.MessageType == Enums.WhatsApp.MessageType.Image)
-                        //    {
-                        //        Thread.Sleep(3000);
-                        //        driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
-                        //        Thread.Sleep(3000);
-                        //        driver.FindElement(By.CssSelector("._3fV_S")).Click();
-                        //        Thread.Sleep(2000);
-                        //        SendKeys.Send(ilkDosyaGonderildi ? Path.GetFileName(message.Content) : message.Content);
-                        //        Thread.Sleep(2000);
-                        //        SendKeys.Send("{ENTER}");
-                        //        Thread.Sleep(3000);
-                        //        SendKeys.Send("{ENTER}");
-
-                        //        ilkDosyaGonderildi = true;
-                        //    }
-                        //}
-
-                        //Thread.Sleep(5000);
+                        
                     }
                     catch (Exception ex)
                     {
@@ -332,7 +307,7 @@ namespace MetodWhatsAppDesktop
 
             btnNew1_Click(null, null);
         }
-               
+
 
         private void btnDelete1_Click(object sender, EventArgs e)
         {
@@ -351,15 +326,15 @@ namespace MetodWhatsAppDesktop
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(WhatsAppConnected && driver != null)
+            if (WhatsAppConnected && driver != null)
                 try
-                {   
+                {
                     driver.Close();
                     driver.Dispose();
                 }
                 catch (Exception ex)
                 {
-                    var msg = ex.ToString();                    
+                    var msg = ex.ToString();
                 }
         }
     }
