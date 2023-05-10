@@ -185,7 +185,7 @@ namespace MetodWhatsAppDesktop
                             string resimAdList = "";
                             foreach (var resim in resimler)
                             {
-                                if (ilkResimMi) continue;
+                                if (ilkResimMi && resim.ResimAdi == resimler[0].ResimAdi) continue;
 
                                 if (resimAdList.Length > 0)
                                     resimAdList += " ";
@@ -205,7 +205,12 @@ namespace MetodWhatsAppDesktop
                                 Thread.Sleep(1500);
                                 SendKeys.Send("{ENTER}");
 
-                                Thread.Sleep(2000);
+                                if (resimler.Count <= 3)
+                                    Thread.Sleep(3000);
+                                else if (resimler.Count <= 5)
+                                    Thread.Sleep(5000);
+                                else
+                                    Thread.Sleep(8000);
                             }
 
 

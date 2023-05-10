@@ -96,8 +96,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.gridControl2);
             this.splitContainer1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(847, 493);
-            this.splitContainer1.SplitterDistance = 550;
+            this.splitContainer1.Size = new System.Drawing.Size(831, 485);
+            this.splitContainer1.SplitterDistance = 539;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -105,10 +105,10 @@
             // 
             this.gridControl1.DataSource = this.bsProduct;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 26);
+            this.gridControl1.Location = new System.Drawing.Point(0, 17);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(550, 467);
+            this.gridControl1.Size = new System.Drawing.Size(539, 468);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -214,7 +214,7 @@
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(550, 26);
+            this.labelControl1.Size = new System.Drawing.Size(539, 17);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Hazır Ürün Listesi";
             // 
@@ -222,11 +222,11 @@
             // 
             this.gridControl2.DataSource = this.bsPhone;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 26);
+            this.gridControl2.Location = new System.Drawing.Point(0, 17);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(292, 383);
+            this.gridControl2.Size = new System.Drawing.Size(287, 395);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -328,15 +328,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(847, 47);
+            this.barDockControlTop.Size = new System.Drawing.Size(831, 47);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 532);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(847, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(831, 0);
             // 
             // barDockControlLeft
             // 
@@ -344,15 +344,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 493);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 485);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(847, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(831, 47);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 493);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
             // 
             // panelControl1
             // 
@@ -364,9 +364,9 @@
             this.panelControl1.Controls.Add(this.tbGsm);
             this.panelControl1.Controls.Add(this.tbName);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 409);
+            this.panelControl1.Location = new System.Drawing.Point(0, 412);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(292, 84);
+            this.panelControl1.Size = new System.Drawing.Size(287, 73);
             this.panelControl1.TabIndex = 0;
             // 
             // btnNew1
@@ -376,9 +376,9 @@
             this.btnNew1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnNew1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew1.ImageOptions.Image")));
             this.btnNew1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnNew1.Location = new System.Drawing.Point(149, 52);
+            this.btnNew1.Location = new System.Drawing.Point(202, 51);
             this.btnNew1.Name = "btnNew1";
-            this.btnNew1.Size = new System.Drawing.Size(26, 23);
+            this.btnNew1.Size = new System.Drawing.Size(20, 18);
             this.btnNew1.TabIndex = 2;
             this.btnNew1.Click += new System.EventHandler(this.btnNew1_Click);
             // 
@@ -389,9 +389,9 @@
             this.btnSave1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSave1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave1.ImageOptions.Image")));
             this.btnSave1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSave1.Location = new System.Drawing.Point(182, 52);
+            this.btnSave1.Location = new System.Drawing.Point(228, 51);
             this.btnSave1.Name = "btnSave1";
-            this.btnSave1.Size = new System.Drawing.Size(26, 23);
+            this.btnSave1.Size = new System.Drawing.Size(20, 18);
             this.btnSave1.TabIndex = 3;
             this.btnSave1.Click += new System.EventHandler(this.btnSave1_Click);
             // 
@@ -402,9 +402,9 @@
             this.btnDelete1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnDelete1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete1.ImageOptions.Image")));
             this.btnDelete1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDelete1.Location = new System.Drawing.Point(214, 52);
+            this.btnDelete1.Location = new System.Drawing.Point(255, 51);
             this.btnDelete1.Name = "btnDelete1";
-            this.btnDelete1.Size = new System.Drawing.Size(26, 23);
+            this.btnDelete1.Size = new System.Drawing.Size(20, 18);
             this.btnDelete1.TabIndex = 2;
             this.btnDelete1.Click += new System.EventHandler(this.btnDelete1_Click);
             // 
@@ -412,7 +412,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(5, 27);
+            this.labelControl4.Location = new System.Drawing.Point(3, 29);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(24, 15);
             this.labelControl4.TabIndex = 1;
@@ -422,7 +422,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(5, 10);
+            this.labelControl3.Location = new System.Drawing.Point(3, 7);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(70, 15);
             this.labelControl3.TabIndex = 1;
@@ -430,24 +430,24 @@
             // 
             // tbGsm
             // 
-            this.tbGsm.Location = new System.Drawing.Point(81, 29);
+            this.tbGsm.Location = new System.Drawing.Point(119, 27);
             this.tbGsm.Name = "tbGsm";
             this.tbGsm.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbGsm.Properties.Appearance.Options.UseFont = true;
             this.tbGsm.Properties.Mask.EditMask = "\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d";
             this.tbGsm.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.tbGsm.Properties.MaxLength = 10;
-            this.tbGsm.Size = new System.Drawing.Size(159, 22);
+            this.tbGsm.Size = new System.Drawing.Size(156, 22);
             this.tbGsm.TabIndex = 1;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(81, 5);
+            this.tbName.Location = new System.Drawing.Point(119, 4);
             this.tbName.MenuManager = this.barManager1;
             this.tbName.Name = "tbName";
             this.tbName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbName.Properties.Appearance.Options.UseFont = true;
-            this.tbName.Size = new System.Drawing.Size(159, 22);
+            this.tbName.Size = new System.Drawing.Size(156, 22);
             this.tbName.TabIndex = 0;
             // 
             // labelControl2
@@ -459,7 +459,7 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl2.Location = new System.Drawing.Point(0, 0);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(292, 26);
+            this.labelControl2.Size = new System.Drawing.Size(287, 17);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Rehber";
             // 
@@ -468,7 +468,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 540);
+            this.ClientSize = new System.Drawing.Size(831, 532);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -476,7 +476,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.LookAndFeel.SkinName = "The Bezier";
+            this.LookAndFeel.SkinName = "Office 2010 Blue";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
