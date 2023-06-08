@@ -447,14 +447,14 @@
             // 
             // tbGsm
             // 
-            this.tbGsm.Location = new System.Drawing.Point(135, 31);
+            this.tbGsm.Location = new System.Drawing.Point(166, 32);
             this.tbGsm.Name = "tbGsm";
             this.tbGsm.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbGsm.Properties.Appearance.Options.UseFont = true;
             this.tbGsm.Properties.Mask.EditMask = "\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d";
             this.tbGsm.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.tbGsm.Properties.MaxLength = 10;
-            this.tbGsm.Size = new System.Drawing.Size(112, 22);
+            this.tbGsm.Size = new System.Drawing.Size(153, 22);
             this.tbGsm.TabIndex = 2;
             // 
             // tbUlkeKodu
@@ -463,10 +463,10 @@
             this.tbUlkeKodu.Name = "tbUlkeKodu";
             this.tbUlkeKodu.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbUlkeKodu.Properties.Appearance.Options.UseFont = true;
-            this.tbUlkeKodu.Properties.Mask.EditMask = "\\d\\d";
+            this.tbUlkeKodu.Properties.Mask.EditMask = "\\d\\d\\d?";
             this.tbUlkeKodu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.tbUlkeKodu.Properties.MaxLength = 3;
-            this.tbUlkeKodu.Size = new System.Drawing.Size(37, 22);
+            this.tbUlkeKodu.Size = new System.Drawing.Size(68, 22);
             this.tbUlkeKodu.TabIndex = 1;
             // 
             // tbName
