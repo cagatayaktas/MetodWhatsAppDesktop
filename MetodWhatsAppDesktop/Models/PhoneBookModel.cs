@@ -8,7 +8,14 @@ namespace MetodWhatsAppDesktop.Models
 {
     public class PhoneBookModel
     {
+        public PhoneBookModel()
+        {
+            Name = "";
+            UlkeKodu = "";
+            Gsm = "";
+        }
         public string Name { get; set; }
+        public string UlkeKodu { get; set; }
         public string Gsm { get; set; }
     }
 }

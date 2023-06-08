@@ -144,7 +144,13 @@ namespace MetodWhatsAppDesktop
                 {
                     try
                     {
-                        driver.Navigate().GoToUrl($"https://web.whatsapp.com/send?phone=+90{phone.Gsm}");
+                        string phoneNumber = phone.Gsm;
+                        if (String.IsNullOrEmpty(phone.UlkeKodu))
+                            phoneNumber = "+90" + phoneNumber;
+                        else
+                            phoneNumber = "+" + phone.UlkeKodu + phone.Gsm;
+
+                        driver.Navigate().GoToUrl($"https://web.whatsapp.com/send?phone={phoneNumber}");
 
                         Thread.Sleep(5000);
 
@@ -217,7 +223,7 @@ namespace MetodWhatsAppDesktop
                             //başlığı gönder
                             var messageArea = driver.FindElement(By.ClassName("_3Uu1_"));
                             messageArea.Click();
-                            messageArea.SendKeys($"({grup.Key.Beden})");
+                            messageArea.SendKeys($"{grup.Key.Beden}");
                             driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
 
                             Thread.Sleep(1500);
@@ -291,6 +297,7 @@ namespace MetodWhatsAppDesktop
                 selectedPhone = (PhoneBookModel)gridView2.GetFocusedRow();
 
                 tbName.Text = selectedPhone.Name;
+                tbUlkeKodu.Text = selectedPhone.UlkeKodu ?? "";
                 tbGsm.Text = selectedPhone.Gsm;
             }
         }
@@ -300,6 +307,7 @@ namespace MetodWhatsAppDesktop
             selectedPhone = null;
 
             tbName.Text = "";
+            tbUlkeKodu.Text = "";
             tbGsm.Text = "";
 
             tbName.Focus();
@@ -319,7 +327,8 @@ namespace MetodWhatsAppDesktop
                     gridDb.Add(new PhoneBookModel
                     {
                         Name = tbName.Text,
-                        Gsm = tbGsm.Text
+                        Gsm = tbGsm.Text,
+                        UlkeKodu = tbUlkeKodu.Text,
                     });
                 }
             }
@@ -327,6 +336,7 @@ namespace MetodWhatsAppDesktop
             {
                 selectedPhone.Name = tbName.Text;
                 selectedPhone.Gsm = tbGsm.Text;
+                selectedPhone.UlkeKodu = tbUlkeKodu.Text;
             }
 
             gridControl2.RefreshDataSource();
