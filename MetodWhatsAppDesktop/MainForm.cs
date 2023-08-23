@@ -172,7 +172,8 @@ namespace MetodWhatsAppDesktop
                                 //ilk resmi gönder
                                 driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
                                 Thread.Sleep(1000);
-                                driver.FindElement(By.CssSelector("._3fV_S")).Click();
+                                //driver.FindElement(By.CssSelector("._3fV_S")).Click();
+                                driver.FindElements(By.CssSelector(".erpdyial.tviruh8d.gfz4du6o.r7fjleex.lhj4utae.le5p0ye3"))[1].Click();
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimler[0].Content);
                                 Thread.Sleep(1000);
@@ -203,7 +204,8 @@ namespace MetodWhatsAppDesktop
                             {
                                 driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
                                 Thread.Sleep(1000);
-                                driver.FindElement(By.CssSelector("._3fV_S")).Click();
+                                //driver.FindElement(By.CssSelector("._3fV_S")).Click();
+                                driver.FindElements(By.CssSelector(".erpdyial.tviruh8d.gfz4du6o.r7fjleex.lhj4utae.le5p0ye3"))[1].Click();
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimAdList);
                                 Thread.Sleep(1000);
