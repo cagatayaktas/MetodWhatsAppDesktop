@@ -182,9 +182,9 @@ namespace MetodWhatsAppDesktop
                                 //driver.FindElements(By.CssSelector("._3ndVb"))[7].Click();                                
                                 driver.FindElements(By.CssSelector(".x11xpdln.x1d8287x.x1h4ghdb"))[0].Click();
                                 Thread.Sleep(1000);
-                                //driver.FindElement(By.CssSelector("._3fV_S")).Click();
-                                var elements = driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"));
-                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[2].Click();
+                                //driver.FindElement(By.CssSelector("._3fV_S")).Click();                                
+                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[3].Click();
+                                //x1i64zmx x1emribx
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimler[0].Content);
                                 Thread.Sleep(1000);
@@ -219,7 +219,7 @@ namespace MetodWhatsAppDesktop
                                 Thread.Sleep(1000);
                                 //driver.FindElement(By.CssSelector("._3fV_S")).Click();
                                 //driver.FindElements(By.CssSelector(".erpdyial.tviruh8d.gfz4du6o.r7fjleex.lhj4utae.le5p0ye3"))[1].Click();
-                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[2].Click();
+                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[3].Click();
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimAdList);
                                 Thread.Sleep(1000);
