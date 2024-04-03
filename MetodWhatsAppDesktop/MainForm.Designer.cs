@@ -50,6 +50,9 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barGetProducts = new DevExpress.XtraBars.BarButtonItem();
+            this.barTest = new DevExpress.XtraBars.BarButtonItem();
+            this.barBekleme = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.barWhatsApp = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -76,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbGsm.Properties)).BeginInit();
@@ -303,8 +307,12 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barGetProducts,
-            this.barWhatsApp});
-            this.barManager1.MaxItemId = 2;
+            this.barWhatsApp,
+            this.barTest,
+            this.barBekleme});
+            this.barManager1.MaxItemId = 5;
+            this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemSpinEdit1});
             // 
             // bar1
             // 
@@ -314,7 +322,9 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barGetProducts, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barWhatsApp, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barTest),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBekleme, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barWhatsApp, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.OptionsBar.RotateWhenVertical = false;
@@ -328,6 +338,35 @@
             this.barGetProducts.ImageOptions.Image = global::MetodWhatsAppDesktop.Properties.Resources.cloud_32;
             this.barGetProducts.Name = "barGetProducts";
             this.barGetProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barGetProducts_ItemClick);
+            // 
+            // barTest
+            // 
+            this.barTest.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barTest.Caption = "Test";
+            this.barTest.Id = 3;
+            this.barTest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barTest.ImageOptions.Image")));
+            this.barTest.Name = "barTest";
+            this.barTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barTest_ItemClick);
+            // 
+            // barBekleme
+            // 
+            this.barBekleme.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barBekleme.Caption = "Bekleme (sn)";
+            this.barBekleme.Edit = this.repositoryItemSpinEdit1;
+            this.barBekleme.EditValue = 5;
+            this.barBekleme.Id = 4;
+            this.barBekleme.Name = "barBekleme";
+            this.barBekleme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // repositoryItemSpinEdit1
+            // 
+            this.repositoryItemSpinEdit1.AutoHeight = false;
+            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit1.IsFloatValue = false;
+            this.repositoryItemSpinEdit1.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
             // barWhatsApp
             // 
@@ -522,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -569,6 +609,9 @@
         private DevExpress.XtraEditors.SimpleButton btnNew1;
         private DevExpress.XtraEditors.TextEdit tbUlkeKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colUlkeKodu;
+        private DevExpress.XtraBars.BarButtonItem barTest;
+        private DevExpress.XtraBars.BarEditItem barBekleme;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
     }
 }
 

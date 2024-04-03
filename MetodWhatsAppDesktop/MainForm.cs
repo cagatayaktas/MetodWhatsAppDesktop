@@ -85,6 +85,9 @@ namespace MetodWhatsAppDesktop
 
                     barWhatsApp.Caption = "Seçili Ürünleri Gönder";
 
+                    barTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barBekleme.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
                     barWhatsApp.Enabled = true;
                 }
                 catch (Exception ex)
@@ -152,7 +155,12 @@ namespace MetodWhatsAppDesktop
 
                         driver.Navigate().GoToUrl($"https://web.whatsapp.com/send?phone={phoneNumber}");
 
-                        Thread.Sleep(5000);
+                        var bekleme = Convert.ToInt32(barBekleme.EditValue);
+                        bekleme = bekleme * 1000;
+                        if (bekleme <= 0)
+                            bekleme = 5000;
+
+                        Thread.Sleep(bekleme);
 
                         var gruplar = messages.GroupBy(a => new { a.Model, a.Beden }).OrderBy(a => a.Key.Model)
                             .ThenBy(a => specOrder.IndexOf(a.Key.Beden.Substring(0, 1)))
@@ -170,10 +178,13 @@ namespace MetodWhatsAppDesktop
                             if (ilkDosyaGonderildi == false)
                             {
                                 //ilk resmi gönder
-                                driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
+                                //driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
+                                //driver.FindElements(By.CssSelector("._3ndVb"))[7].Click();                                
+                                driver.FindElements(By.CssSelector(".x11xpdln.x1d8287x.x1h4ghdb"))[0].Click();
                                 Thread.Sleep(1000);
                                 //driver.FindElement(By.CssSelector("._3fV_S")).Click();
-                                driver.FindElements(By.CssSelector(".erpdyial.tviruh8d.gfz4du6o.r7fjleex.lhj4utae.le5p0ye3"))[1].Click();
+                                var elements = driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"));
+                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[2].Click();
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimler[0].Content);
                                 Thread.Sleep(1000);
@@ -202,10 +213,13 @@ namespace MetodWhatsAppDesktop
 
                             if (resimAdList.Length > 0)
                             {
-                                driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
+                                //driver.FindElements(By.CssSelector("._3ndVb"))[6].Click();
+                                //driver.FindElements(By.CssSelector("._3ndVb"))[7].Click();
+                                driver.FindElements(By.CssSelector(".x11xpdln.x1d8287x.x1h4ghdb"))[0].Click();
                                 Thread.Sleep(1000);
                                 //driver.FindElement(By.CssSelector("._3fV_S")).Click();
-                                driver.FindElements(By.CssSelector(".erpdyial.tviruh8d.gfz4du6o.r7fjleex.lhj4utae.le5p0ye3"))[1].Click();
+                                //driver.FindElements(By.CssSelector(".erpdyial.tviruh8d.gfz4du6o.r7fjleex.lhj4utae.le5p0ye3"))[1].Click();
+                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[2].Click();
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimAdList);
                                 Thread.Sleep(1000);
@@ -223,10 +237,12 @@ namespace MetodWhatsAppDesktop
 
 
                             //başlığı gönder
-                            var messageArea = driver.FindElement(By.ClassName("_3Uu1_"));
+                            //var messageArea = driver.FindElement(By.ClassName("_3Uu1_"));
+                            var messageArea = driver.FindElements(By.CssSelector(".selectable-text.copyable-text.x15bjb6t.x1n2onr6"))[1];
                             messageArea.Click();
                             messageArea.SendKeys($"{grup.Key.Beden}");
-                            driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
+                            //driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
+                            SendKeys.Send("{ENTER}");                            
 
                             Thread.Sleep(1500);
                         }
@@ -378,6 +394,40 @@ namespace MetodWhatsAppDesktop
                 {
                     var msg = ex.ToString();
                 }
+        }
+
+        private void barTest_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var phones = new List<PhoneBookModel>();
+
+            foreach (var item in gridView2.GetSelectedRows())
+            {
+                phones.Add((PhoneBookModel)gridView2.GetRow(item));
+            }
+
+            if (phones.Count == 0)
+            {
+                MessageBox.Show("Lütfen en az 1 adet alıcı telefonu seçin");
+                return;
+            }
+
+            try
+            {
+                var phone = phones.FirstOrDefault();
+
+                string phoneNumber = phone.Gsm;
+                if (!String.IsNullOrEmpty(phone.UlkeKodu))
+                    phoneNumber = "+" + phone.UlkeKodu + phone.Gsm;
+                
+                driver.Navigate().GoToUrl($"https://web.whatsapp.com/send?phone={phoneNumber}");
+
+                //barTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Test İşleminde Hata Oluştu\n\r" + ex.ToString());
+            }
+
         }
     }
 }
