@@ -50,9 +50,11 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barGetProducts = new DevExpress.XtraBars.BarButtonItem();
-            this.barTest = new DevExpress.XtraBars.BarButtonItem();
+            this.barImageButtonIndex = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.barBekleme = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.barTest = new DevExpress.XtraBars.BarButtonItem();
             this.barWhatsApp = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -79,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -103,8 +106,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.gridControl2);
             this.splitContainer1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(889, 485);
-            this.splitContainer1.SplitterDistance = 553;
+            this.splitContainer1.Size = new System.Drawing.Size(840, 485);
+            this.splitContainer1.SplitterDistance = 610;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -115,7 +118,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(553, 464);
+            this.gridControl1.Size = new System.Drawing.Size(610, 464);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -221,7 +224,7 @@
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(553, 21);
+            this.labelControl1.Size = new System.Drawing.Size(610, 21);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Hazır Ürün Listesi";
             // 
@@ -233,7 +236,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(331, 365);
+            this.gridControl2.Size = new System.Drawing.Size(225, 365);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -309,10 +312,12 @@
             this.barGetProducts,
             this.barWhatsApp,
             this.barTest,
-            this.barBekleme});
-            this.barManager1.MaxItemId = 5;
+            this.barBekleme,
+            this.barImageButtonIndex});
+            this.barManager1.MaxItemId = 6;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemSpinEdit1});
+            this.repositoryItemSpinEdit1,
+            this.repositoryItemSpinEdit2});
             // 
             // bar1
             // 
@@ -322,8 +327,9 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barGetProducts, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barTest),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barImageButtonIndex, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBekleme, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barTest, true),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barWhatsApp, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
@@ -339,15 +345,28 @@
             this.barGetProducts.Name = "barGetProducts";
             this.barGetProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barGetProducts_ItemClick);
             // 
-            // barTest
+            // barImageButtonIndex
             // 
-            this.barTest.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barTest.Caption = "Test";
-            this.barTest.Id = 3;
-            this.barTest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barTest.ImageOptions.Image")));
-            this.barTest.Name = "barTest";
-            this.barTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.barTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barTest_ItemClick);
+            this.barImageButtonIndex.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barImageButtonIndex.Caption = "Buton Sıra";
+            this.barImageButtonIndex.Edit = this.repositoryItemSpinEdit2;
+            this.barImageButtonIndex.EditValue = 2;
+            this.barImageButtonIndex.Id = 5;
+            this.barImageButtonIndex.Name = "barImageButtonIndex";
+            // 
+            // repositoryItemSpinEdit2
+            // 
+            this.repositoryItemSpinEdit2.AutoHeight = false;
+            this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit2.IsFloatValue = false;
+            this.repositoryItemSpinEdit2.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit2.MaxValue = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
             // 
             // barBekleme
             // 
@@ -368,6 +387,16 @@
             this.repositoryItemSpinEdit1.Mask.EditMask = "N00";
             this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
+            // barTest
+            // 
+            this.barTest.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barTest.Caption = "Test";
+            this.barTest.Id = 3;
+            this.barTest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barTest.ImageOptions.Image")));
+            this.barTest.Name = "barTest";
+            this.barTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barTest_ItemClick);
+            // 
             // barWhatsApp
             // 
             this.barWhatsApp.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
@@ -383,7 +412,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(889, 47);
+            this.barDockControlTop.Size = new System.Drawing.Size(840, 47);
             // 
             // barDockControlBottom
             // 
@@ -391,7 +420,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 532);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(889, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(840, 0);
             // 
             // barDockControlLeft
             // 
@@ -405,7 +434,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(889, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(840, 47);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
             // 
@@ -422,7 +451,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(0, 386);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(331, 99);
+            this.panelControl1.Size = new System.Drawing.Size(225, 99);
             this.panelControl1.TabIndex = 0;
             // 
             // btnNew1
@@ -527,7 +556,7 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl2.Location = new System.Drawing.Point(0, 0);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(331, 21);
+            this.labelControl2.Size = new System.Drawing.Size(225, 21);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Rehber";
             // 
@@ -535,7 +564,7 @@
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(889, 532);
+            this.ClientSize = new System.Drawing.Size(840, 532);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -561,6 +590,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -612,6 +642,8 @@
         private DevExpress.XtraBars.BarButtonItem barTest;
         private DevExpress.XtraBars.BarEditItem barBekleme;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
+        private DevExpress.XtraBars.BarEditItem barImageButtonIndex;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
     }
 }
 

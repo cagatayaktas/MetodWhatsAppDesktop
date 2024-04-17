@@ -49,6 +49,8 @@ namespace MetodWhatsAppDesktop
         {
             CheckForIllegalCrossThreadCalls = false;
 
+            barImageButtonIndex.EditValue = Properties.Settings.Default.ImageButtonIndex;
+
             var gridDb = bsPhone.List as IList<PhoneBookModel>;
             foreach (var item in Services.PhoneDataService.PhoneData.OrderBy(a => a.Name))
                 gridDb.Add(item);
@@ -167,6 +169,7 @@ namespace MetodWhatsAppDesktop
                             //.ThenBy(a => a.Key.Beden)
                             .ToList();
 
+                        int imageIndex = Convert.ToInt32(barImageButtonIndex.EditValue);
 
                         foreach (var grup in gruplar)
                         {
@@ -183,7 +186,7 @@ namespace MetodWhatsAppDesktop
                                 driver.FindElements(By.CssSelector(".x11xpdln.x1d8287x.x1h4ghdb"))[0].Click();
                                 Thread.Sleep(1000);
                                 //driver.FindElement(By.CssSelector("._3fV_S")).Click();                                
-                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[3].Click();
+                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[imageIndex].Click();
                                 //x1i64zmx x1emribx
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimler[0].Content);
@@ -219,7 +222,7 @@ namespace MetodWhatsAppDesktop
                                 Thread.Sleep(1000);
                                 //driver.FindElement(By.CssSelector("._3fV_S")).Click();
                                 //driver.FindElements(By.CssSelector(".erpdyial.tviruh8d.gfz4du6o.r7fjleex.lhj4utae.le5p0ye3"))[1].Click();
-                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[3].Click();
+                                driver.FindElements(By.CssSelector(".x1i64zmx.x1emribx"))[imageIndex].Click();
                                 Thread.Sleep(1000);
                                 SendKeys.Send(resimAdList);
                                 Thread.Sleep(1000);
@@ -387,6 +390,8 @@ namespace MetodWhatsAppDesktop
             if (WhatsAppConnected && driver != null)
                 try
                 {
+                    Properties.Settings.Default.ImageButtonIndex = Convert.ToInt32(barImageButtonIndex.EditValue);
+                    Properties.Settings.Default.Save();
                     driver.Close();
                     driver.Dispose();
                 }
