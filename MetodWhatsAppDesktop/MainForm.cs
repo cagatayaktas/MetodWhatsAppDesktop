@@ -192,8 +192,9 @@ namespace MetodWhatsAppDesktop
                                 SendKeys.Send(resimler[0].Content);
                                 Thread.Sleep(1000);
                                 SendKeys.Send("{ENTER}");
-                                Thread.Sleep(1500);
-                                SendKeys.Send("{ENTER}");
+                                Thread.Sleep(1500); 
+                                //SendKeys.Send("{ENTER}");
+                                driver.FindElements(By.CssSelector("._ajx2"))[0].Click();
 
                                 Thread.Sleep(2000);
 
@@ -228,7 +229,8 @@ namespace MetodWhatsAppDesktop
                                 Thread.Sleep(1000);
                                 SendKeys.Send("{ENTER}");
                                 Thread.Sleep(1500);
-                                SendKeys.Send("{ENTER}");
+                                //SendKeys.Send("{ENTER}");
+                                driver.FindElements(By.CssSelector("._ajx2"))[0].Click();
 
                                 if (resimler.Count <= 3)
                                     Thread.Sleep(3000);
@@ -245,7 +247,8 @@ namespace MetodWhatsAppDesktop
                             messageArea.Click();
                             messageArea.SendKeys($"{grup.Key.Beden}");
                             //driver.FindElement(By.CssSelector(".tvf2evcx.oq44ahr5.lb5m6g5c.svlsagor.p2rjqpw5.epia9gcq")).Click();
-                            SendKeys.Send("{ENTER}");                            
+                            //SendKeys.Send("{ENTER}");                            
+                            driver.FindElements(By.CssSelector("._ak1t._ak1u"))[0].Click();
 
                             Thread.Sleep(1500);
                         }
