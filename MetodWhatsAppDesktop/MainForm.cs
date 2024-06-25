@@ -192,10 +192,11 @@ namespace MetodWhatsAppDesktop
                                 SendKeys.Send(resimler[0].Content);
                                 Thread.Sleep(1000);
                                 SendKeys.Send("{ENTER}");
-                                Thread.Sleep(1500); 
+                                Thread.Sleep(1500);
                                 //SendKeys.Send("{ENTER}");
-                                driver.FindElements(By.CssSelector("._ajx2"))[0].Click();
-
+                                //driver.FindElements(By.CssSelector("._ajx2"))[0].Click();
+                                //x78zum5 x6s0dn4 xl56j7k xexx8yu x4uap5 x18d9i69 xkhd6sd x1f6kntn xk50ysn x7o08j2 xtvhhri x1rluvsa x14yjl9h xudhj91 x18nykt9 xww2gxu xu306ak x12s1jxh xkdsq27 xwwtwea x1gfkgh9 x1247r65 xng8ra
+                                driver.FindElements(By.CssSelector(".x78zum5.x6s0dn4.xl56j7k.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x1f6kntn.xk50ysn.x7o08j2.xtvhhri.x1rluvsa.x14yjl9h.xudhj91.x18nykt9.xww2gxu.xu306ak.x12s1jxh.xkdsq27.xwwtwea.x1gfkgh9.x1247r65.xng8ra"))[0].Click();
                                 Thread.Sleep(2000);
 
                                 ilkDosyaGonderildi = true;
@@ -230,14 +231,17 @@ namespace MetodWhatsAppDesktop
                                 SendKeys.Send("{ENTER}");
                                 Thread.Sleep(1500);
                                 //SendKeys.Send("{ENTER}");
-                                driver.FindElements(By.CssSelector("._ajx2"))[0].Click();
+                                //driver.FindElements(By.CssSelector("._ajx2"))[0].Click();
+                                driver.FindElements(By.CssSelector(".x78zum5.x6s0dn4.xl56j7k.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x1f6kntn.xk50ysn.x7o08j2.xtvhhri.x1rluvsa.x14yjl9h.xudhj91.x18nykt9.xww2gxu.xu306ak.x12s1jxh.xkdsq27.xwwtwea.x1gfkgh9.x1247r65.xng8ra"))[0].Click();
 
-                                if (resimler.Count <= 3)
+                                if (resimler.Count <= 1)
                                     Thread.Sleep(3000);
-                                else if (resimler.Count <= 5)
+                                else if (resimler.Count <= 3)
                                     Thread.Sleep(5000);
+                                else if (resimler.Count <= 5)
+                                    Thread.Sleep(7000);
                                 else
-                                    Thread.Sleep(8000);
+                                    Thread.Sleep(10000);
                             }
 
 
