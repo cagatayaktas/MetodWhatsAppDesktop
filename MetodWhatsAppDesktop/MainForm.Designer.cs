@@ -47,19 +47,17 @@
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUlkeKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGsm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTelefonId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barGetProducts = new DevExpress.XtraBars.BarButtonItem();
-            this.barImageButtonIndex = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.barBekleme = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.barTest = new DevExpress.XtraBars.BarButtonItem();
             this.barWhatsApp = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnNew1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave1 = new DevExpress.XtraEditors.SimpleButton();
@@ -81,8 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbGsm.Properties)).BeginInit();
@@ -106,8 +104,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.gridControl2);
             this.splitContainer1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainer1.Panel2.Controls.Add(this.labelControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(840, 485);
-            this.splitContainer1.SplitterDistance = 610;
+            this.splitContainer1.Size = new System.Drawing.Size(1021, 485);
+            this.splitContainer1.SplitterDistance = 575;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -118,7 +116,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(610, 464);
+            this.gridControl1.Size = new System.Drawing.Size(575, 464);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -224,7 +222,7 @@
             this.labelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl1.Location = new System.Drawing.Point(0, 0);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(610, 21);
+            this.labelControl1.Size = new System.Drawing.Size(575, 21);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Hazır Ürün Listesi";
             // 
@@ -236,14 +234,14 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(225, 365);
+            this.gridControl2.Size = new System.Drawing.Size(441, 365);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // bsPhone
             // 
-            this.bsPhone.DataSource = typeof(MetodWhatsAppDesktop.Models.PhoneBookModel);
+            this.bsPhone.DataSource = typeof(MetodWhatsAppDesktop.Models.WATelefonRehberi);
             // 
             // gridView2
             // 
@@ -251,7 +249,8 @@
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colName,
             this.colUlkeKodu,
-            this.colGsm});
+            this.colGsm,
+            this.colTelefonId});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
@@ -267,13 +266,13 @@
             // colName
             // 
             this.colName.Caption = "İsim / Ünvan";
-            this.colName.FieldName = "Name";
+            this.colName.FieldName = "AdSoyadUnvan";
             this.colName.Name = "colName";
             this.colName.OptionsColumn.AllowEdit = false;
             this.colName.OptionsColumn.AllowFocus = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 1;
-            this.colName.Width = 209;
+            this.colName.Width = 234;
             // 
             // colUlkeKodu
             // 
@@ -285,19 +284,26 @@
             this.colUlkeKodu.OptionsColumn.FixedWidth = true;
             this.colUlkeKodu.Visible = true;
             this.colUlkeKodu.VisibleIndex = 2;
-            this.colUlkeKodu.Width = 35;
+            this.colUlkeKodu.Width = 50;
             // 
             // colGsm
             // 
             this.colGsm.Caption = "Gsm No";
-            this.colGsm.FieldName = "Gsm";
+            this.colGsm.FieldName = "Telefon";
             this.colGsm.Name = "colGsm";
             this.colGsm.OptionsColumn.AllowEdit = false;
             this.colGsm.OptionsColumn.AllowFocus = false;
             this.colGsm.OptionsColumn.FixedWidth = true;
             this.colGsm.Visible = true;
             this.colGsm.VisibleIndex = 3;
-            this.colGsm.Width = 100;
+            this.colGsm.Width = 140;
+            // 
+            // colTelefonId
+            // 
+            this.colTelefonId.FieldName = "TelefonId";
+            this.colTelefonId.Name = "colTelefonId";
+            this.colTelefonId.OptionsColumn.AllowEdit = false;
+            this.colTelefonId.OptionsColumn.AllowFocus = false;
             // 
             // barManager1
             // 
@@ -310,10 +316,7 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barGetProducts,
-            this.barWhatsApp,
-            this.barTest,
-            this.barBekleme,
-            this.barImageButtonIndex});
+            this.barWhatsApp});
             this.barManager1.MaxItemId = 6;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
@@ -327,9 +330,6 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barGetProducts, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barImageButtonIndex, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBekleme, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barTest, true),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barWhatsApp, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
@@ -345,14 +345,55 @@
             this.barGetProducts.Name = "barGetProducts";
             this.barGetProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barGetProducts_ItemClick);
             // 
-            // barImageButtonIndex
+            // barWhatsApp
             // 
-            this.barImageButtonIndex.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barImageButtonIndex.Caption = "Buton Sıra";
-            this.barImageButtonIndex.Edit = this.repositoryItemSpinEdit2;
-            this.barImageButtonIndex.EditValue = 2;
-            this.barImageButtonIndex.Id = 5;
-            this.barImageButtonIndex.Name = "barImageButtonIndex";
+            this.barWhatsApp.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barWhatsApp.Caption = "Seçili Ürünleri Gönder";
+            this.barWhatsApp.Id = 1;
+            this.barWhatsApp.ImageOptions.Image = global::MetodWhatsAppDesktop.Properties.Resources.whatsapp_32;
+            this.barWhatsApp.Name = "barWhatsApp";
+            this.barWhatsApp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barWhatsApp_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1021, 47);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 532);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1021, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 485);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1021, 47);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
+            // 
+            // repositoryItemSpinEdit1
+            // 
+            this.repositoryItemSpinEdit1.AutoHeight = false;
+            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit1.IsFloatValue = false;
+            this.repositoryItemSpinEdit1.Mask.EditMask = "N00";
+            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
             // repositoryItemSpinEdit2
             // 
@@ -368,76 +409,6 @@
             0});
             this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
             // 
-            // barBekleme
-            // 
-            this.barBekleme.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barBekleme.Caption = "Bekleme (sn)";
-            this.barBekleme.Edit = this.repositoryItemSpinEdit1;
-            this.barBekleme.EditValue = 5;
-            this.barBekleme.Id = 4;
-            this.barBekleme.Name = "barBekleme";
-            this.barBekleme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // repositoryItemSpinEdit1
-            // 
-            this.repositoryItemSpinEdit1.AutoHeight = false;
-            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit1.IsFloatValue = false;
-            this.repositoryItemSpinEdit1.Mask.EditMask = "N00";
-            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
-            // 
-            // barTest
-            // 
-            this.barTest.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barTest.Caption = "Test";
-            this.barTest.Id = 3;
-            this.barTest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barTest.ImageOptions.Image")));
-            this.barTest.Name = "barTest";
-            this.barTest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.barTest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barTest_ItemClick);
-            // 
-            // barWhatsApp
-            // 
-            this.barWhatsApp.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barWhatsApp.Caption = "Whatsapp\'a Bağlan";
-            this.barWhatsApp.Id = 1;
-            this.barWhatsApp.ImageOptions.Image = global::MetodWhatsAppDesktop.Properties.Resources.whatsapp_32;
-            this.barWhatsApp.Name = "barWhatsApp";
-            this.barWhatsApp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barWhatsApp_ItemClick);
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(840, 47);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 532);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(840, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 485);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(840, 47);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 485);
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.btnNew1);
@@ -451,7 +422,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(0, 386);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(225, 99);
+            this.panelControl1.Size = new System.Drawing.Size(441, 99);
             this.panelControl1.TabIndex = 0;
             // 
             // btnNew1
@@ -461,7 +432,7 @@
             this.btnNew1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnNew1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew1.ImageOptions.Image")));
             this.btnNew1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnNew1.Location = new System.Drawing.Point(204, 57);
+            this.btnNew1.Location = new System.Drawing.Point(318, 64);
             this.btnNew1.Name = "btnNew1";
             this.btnNew1.Size = new System.Drawing.Size(33, 30);
             this.btnNew1.TabIndex = 3;
@@ -474,7 +445,7 @@
             this.btnSave1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSave1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave1.ImageOptions.Image")));
             this.btnSave1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSave1.Location = new System.Drawing.Point(245, 57);
+            this.btnSave1.Location = new System.Drawing.Point(357, 64);
             this.btnSave1.Name = "btnSave1";
             this.btnSave1.Size = new System.Drawing.Size(33, 30);
             this.btnSave1.TabIndex = 4;
@@ -487,7 +458,7 @@
             this.btnDelete1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnDelete1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete1.ImageOptions.Image")));
             this.btnDelete1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDelete1.Location = new System.Drawing.Point(286, 57);
+            this.btnDelete1.Location = new System.Drawing.Point(396, 64);
             this.btnDelete1.Name = "btnDelete1";
             this.btnDelete1.Size = new System.Drawing.Size(33, 30);
             this.btnDelete1.TabIndex = 5;
@@ -515,7 +486,7 @@
             // 
             // tbGsm
             // 
-            this.tbGsm.Location = new System.Drawing.Point(166, 32);
+            this.tbGsm.Location = new System.Drawing.Point(276, 31);
             this.tbGsm.Name = "tbGsm";
             this.tbGsm.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbGsm.Properties.Appearance.Options.UseFont = true;
@@ -544,7 +515,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbName.Properties.Appearance.Options.UseFont = true;
-            this.tbName.Size = new System.Drawing.Size(227, 22);
+            this.tbName.Size = new System.Drawing.Size(337, 22);
             this.tbName.TabIndex = 0;
             // 
             // labelControl2
@@ -556,7 +527,7 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl2.Location = new System.Drawing.Point(0, 0);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(225, 21);
+            this.labelControl2.Size = new System.Drawing.Size(441, 21);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Rehber";
             // 
@@ -564,7 +535,7 @@
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(840, 532);
+            this.ClientSize = new System.Drawing.Size(1021, 532);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -577,7 +548,6 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metod Ürün Paylaş";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -590,8 +560,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -639,11 +609,9 @@
         private DevExpress.XtraEditors.SimpleButton btnNew1;
         private DevExpress.XtraEditors.TextEdit tbUlkeKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colUlkeKodu;
-        private DevExpress.XtraBars.BarButtonItem barTest;
-        private DevExpress.XtraBars.BarEditItem barBekleme;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
-        private DevExpress.XtraBars.BarEditItem barImageButtonIndex;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn colTelefonId;
     }
 }
 
