@@ -18,9 +18,9 @@ namespace MetodWhatsAppDesktop.Services
             get
             {
                 if (_client == null)
-                    _client = new RestClient("http://localhost:63173/api/");
-                //_client = new RestClient("http://api.bayramoglu.in/api/");
-                
+                    _client = new RestClient("http://api.bayramoglu.in/api/");
+                //_client = new RestClient("http://localhost:63173/api/");
+
                 return _client;
             }
         }

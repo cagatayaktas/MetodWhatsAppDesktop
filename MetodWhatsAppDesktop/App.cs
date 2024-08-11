@@ -12,7 +12,7 @@ namespace MetodWhatsAppDesktop
     {
         public static void Init()
         { 
-            Services.PhoneDataService.LoadData();
+            //Services.PhoneDataService.LoadData();
         }
     }
 }
